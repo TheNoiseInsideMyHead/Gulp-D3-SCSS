@@ -1,0 +1,19 @@
+{
+  "name": "gulp-d3-scss-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheNoiseInsideMyHead/Gulp-D3-SCSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheNoiseInsideMyHead/Gulp-D3-SCSS/issues"
+  },
+  "homepage": "https://github.com/TheNoiseInsideMyHead/Gulp-D3-SCSS#readme"
+}
