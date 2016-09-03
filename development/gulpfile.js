@@ -1,20 +1,20 @@
 'use strict';
 
 const gulp = require('gulp');
+const pug  = require('gulp-pug');
+const sass = require('gulp-sass');
 
-gulp.task('default', function(){
-    return gulp.src('src/**/*.*')
-        .on('data', function(file){
-            console.log({
-                contents: file.contents,
-                path:     file.path,
-                cwd:      file.cwd,
-                base:     file.base
-            });
-        })
-        .pipe(gulp.dest(function(file){
-            return file.extname == '.js' ? '../build' :
-                   file.extname == '.scss' ? '../build/css' : '../build';
-        }));
+gulp.task('pugCompile', function(){
+    return gulp.src('templates/index.pug')
+            .pipe(pug({
+                pretty: true
+            }))
+            .pipe(gulp.dest('../build/templates'));
 });
 
+gulp.task('scssCompile', function(){
+    return gulp.src('src/scss/styles.scss')
+            .pipe(sass().on('error', sass.logError))
+            .pipe(gulp.dest('../build/src/css'));
+});
+gulp.task('default', gulp.series('pugCompile', 'scssCompile'));
